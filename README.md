@@ -18,3 +18,15 @@ $ kubectl port-forward -n kubeflow svc/ml-pipeline-ui 8080:80
 ```
 ## Connect to the Kubeflow UI
 Accessible at `http://127.0.0.1:8080/#/pipelines`
+
+## To uninstall Kubeflow Pipelines
+```bash
+$ kubectl delete -k "github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION"
+$ kubectl delete -k "github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION"
+```
+
+## For more info
+### Deploying KF locally
+`https://www.kubeflow.org/docs/components/pipelines/installation/localcluster-deployment/`
+### Creating KF components
+`https://www.kubeflow.org/docs/components/pipelines/sdk/`
